@@ -1,0 +1,19 @@
+/* =========================
+   Footer
+========================= */
+
+footer {
+    background: var(--surface);
+
+    border-top: 1px solid var(--border);
+
+    padding: 1.5rem 2rem;
+
+    text-align: center;
+}
+
+footer p {
+    color: var(--text-muted);
+
+    font-size: 0.9rem;
+}
