@@ -13,6 +13,8 @@ const taglines = [
     "Cast away your worries.",
     "Bored? Check out the Fun Stuff section.",
     `${date.toDateString()} might be a good day...`,
+    "A portfolio is a curated collection designed to demonstrate a person's skills, accomplishments, or holdings.",
+    'The word portfolio comes from the Italian word portafoglio, which literally means "a case for carrying loose papers".',
 ];
 
 const taglineA = document.getElementById("tagline-a");

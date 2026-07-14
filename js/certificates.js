@@ -2,23 +2,46 @@ const certificateData = [
     {
         title: "CS50 Introduction to Programming with Python",
         issuer: "David J. Malan, Harvard University",
-        date: "2026",
-        image: "assets/certificates/CS50P.jpg"
+        date: "May 25 2026",
+        image: "assets/certificates/CS50P.jpg",
     },
     {
-        title: "'Best Speaker' for Economic and Social Council",
+        title: "'Best Speaker' for Economic and Social Council ISBMUN 2025",
         issuer: "Anthony Giles, Conference Director, ISB Model United Nations",
         date: "2025",
-        image: "assets/certificates/isbmun-best-speaker.jpg"
+        image: "assets/certificates/isbmun-best-speaker.jpg",
+    },
+    {
+        title: "'Honorable Mention' for Economic and Social Council IPSMUN 2025",
+        issuer: "Maria Louise Pante Hizon, IPSMUN Advisor",
+        date: "April 26 2025",
+        image: "assets/certificates/ipsmun-ecosoc-honorable-mention.jpg",
+    },
+    {
+        title: "Work Experience Weekend for Surgery & Medical Ethics",
+        issuer: "Osama Al-Jibury",
+        date: "May 29 2026",
+        image: "assets/certificates/premed-projects-work-experience-weekend.jpg",
+    },
+    {
+        title: "freeCodeCamp Python Certification",
+        issuer: "Quincy Larson, Executive Director, freeCodeCamp.org",
+        date: "May 1 2026",
+        image: "assets/certificates/freecodecamp-python.png",
     },
 ];
 
-const modal = document.getElementById("certificate-modal");
-const modalImage = document.getElementById("modal-image");
+const modal = document.querySelector("#certificate-modal");
+const modalImage = modal.querySelector("#modal-image");
+const modalTitle = modal.querySelector("#modal-title");
+const modalIssuer = modal.querySelector("#modal-issuer");
 
-function openModal(image, title) {
+function openModal(image, title, issuer) {
     modalImage.src = image;
     modalImage.alt = title;
+    
+    modalTitle.textContent = title;
+    modalIssuer.textContent = issuer;
 
     modal.classList.remove("hidden");
 }
@@ -52,13 +75,13 @@ certificateData.forEach(certificate => {
 
         <div>
             <h2>${certificate.title}</h2>
-            <p>${certificate.issuer}</p>
+            <p class="certificate-issuer">${certificate.issuer}</p>
             <p>${certificate.date}</p>
         </div>
     `;
 
     card.addEventListener("click", () => {
-        openModal(certificate.image, certificate.title);
+        openModal(certificate.image, certificate.title, certificate.issuer);
     });
 
     container.appendChild(card);
