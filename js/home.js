@@ -2,7 +2,9 @@ const taglines = [
     "I am a high school student.",
     "I can speak English.",
     "I am always seeking to be content.",
-    "I can build websites."
+    "I can build websites.",
+    "Why don't we work together?",
+    "Looking for something?",
 ];
 
 const taglineElement = document.getElementById("tagline");
