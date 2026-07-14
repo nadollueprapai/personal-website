@@ -63,6 +63,30 @@
     background: rgba(255, 255, 255, 0.75);
 }
 
+.tagline-container {
+    position: relative;
+
+    width: 100%;
+    min-height: 2.5em;
+}
+
+.tagline {
+    position: absolute;
+
+    width: 100%;
+
+    left: 0;
+    top: 0;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+.tagline.active {
+    opacity: 1;
+}
+
 .home-links {
     display: flex;
     justify-content: center;

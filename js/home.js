@@ -1,3 +1,5 @@
+const date = new Date();
+
 const taglines = [
     "I am a high school student.",
     "I can speak English.",
@@ -5,30 +7,51 @@ const taglines = [
     "I can build websites.",
     "Why don't we work together?",
     "Looking for something?",
+    "Thanks for stopping by :).",
+    "Take your time.",
+    "No rush.",
+    "Cast away your worries.",
+    "Bored? Check out the Fun Stuff section.",
+    `${date.toDateString()} might be a good day...`,
 ];
 
-const taglineElement = document.getElementById("tagline");
+const taglineA = document.getElementById("tagline-a");
+const taglineB = document.getElementById("tagline-b");
 
-let currentTagline = 0;
+let currentTaglineIndex = 0;
+let showingA = true;
 
-if (taglineElement) {
+setInterval(
+    () => {
+        // Randomize a tagline index without repeating the same tagline.
+        let nextIndex;
 
-    function changeTagline() {
+        do {
+            nextIndex = Math.floor(Math.random() * taglines.length);
+        } while (nextIndex === currentTaglineIndex);
 
-        taglineElement.style.opacity = 0;
+        currentTaglineIndex = nextIndex;
 
-        setTimeout(() => {
+        // Determine the currently visible and hidden taglines.
+        showingA = taglineA.classList.contains("active");
+        const visible = showingA ? taglineA : taglineB;
+        const hidden = showingA ? taglineB : taglineA;
 
-            currentTagline = (currentTagline + 1) % taglines.length;
+        // Change the text content of the currently hidden tagline.
+        hidden.textContent = taglines[currentTaglineIndex];
 
-            taglineElement.textContent = taglines[currentTagline];
+        // Hide the currently visible tagline.
+        visible.classList.remove("active");
 
-            taglineElement.style.opacity = 1;
+        // Wait split-second.
+        setTimeout(
+            () => {
+                // Show the currently hidden tagline.
+                hidden.classList.add("active");
+            },
+            250,
+        )
 
-            setTimeout(changeTagline, 2700);
-
-        }, 300);
-    }
-
-    setTimeout(changeTagline, 3000);
-}
+    },
+    5000,
+);
