@@ -74,21 +74,21 @@
     font-size: 0.9rem;
 }
 
-.certificate-header {
+.gallery-header {
     text-align: center;
     margin-bottom: 3rem;
 }
 
-.certificate-header h1 {
+.gallery-header h1 {
     font-size: 3rem;
 }
 
-.certificate-header p {
+.gallery-header p {
     color: var(--text-muted);
 }
 
 
-.certificate-list {
+.gallery-list {
     display: grid;
 
     grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
@@ -99,7 +99,7 @@
 }
 
 
-.certificate {
+.gallery-item {
     background: var(--surface);
 
     border: 1px solid var(--border);
@@ -115,7 +115,7 @@
         border-color 0.2s ease;
 }
 
-.certificate:hover {
+.gallery-item:hover {
     transform: translateY(-3px);
 
     box-shadow: var(--shadow-hover);
@@ -123,7 +123,7 @@
     border-color: var(--accent);
 }
 
-.certificate img {
+.gallery-item img {
     width: 100%;
 
     max-height: 180px;
@@ -133,7 +133,7 @@
     margin-bottom: 1rem;
 }
 
-.certificate > div {
+.gallery-item > div {
     margin-top: 1rem;
     background: var(--background);
     padding: 1rem;
@@ -141,15 +141,15 @@
 }
 
 
-.certificate h2 {
+.gallery-item h2 {
     font-size: 1.1rem;
 }
 
-.certificate p {
+.gallery-item p {
     font-size: 0.9rem;
 }
 
-.certificate-issuer {
+.gallery-item-issuer {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

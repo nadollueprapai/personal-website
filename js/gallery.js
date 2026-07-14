@@ -1,4 +1,4 @@
-const certificateData = [
+const galleryData = [
     {
         title: "CS50 Introduction to Programming with Python",
         issuer: "David J. Malan, Harvard University",
@@ -31,7 +31,7 @@ const certificateData = [
     },
 ];
 
-const modal = document.querySelector("#certificate-modal");
+const modal = document.querySelector("#gallery-modal");
 const modalImage = modal.querySelector("#modal-image");
 const modalTitle = modal.querySelector("#modal-title");
 const modalIssuer = modal.querySelector("#modal-issuer");
@@ -62,26 +62,26 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-const container = document.getElementById("certificate-list");
+const container = document.getElementById("gallery-list");
 
-certificateData.forEach(certificate => {
+galleryData.forEach(item => {
 
     const card = document.createElement("article");
 
-    card.className = "certificate";
+    card.className = "gallery-item";
 
     card.innerHTML = `
-        <img src="${certificate.image}" alt="${certificate.title}">
+        <img src="${item.image}" alt="${item.title}">
 
         <div>
-            <h2>${certificate.title}</h2>
-            <p class="certificate-issuer">${certificate.issuer}</p>
-            <p>${certificate.date}</p>
+            <h2>${item.title}</h2>
+            <p class="gallery-item-issuer">${item.issuer}</p>
+            <p>${item.date}</p>
         </div>
     `;
 
     card.addEventListener("click", () => {
-        openModal(certificate.image, certificate.title, certificate.issuer);
+        openModal(item.image, item.title, item.issuer);
     });
 
     container.appendChild(card);
