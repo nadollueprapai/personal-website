@@ -13,24 +13,22 @@ let currentTagline = 0;
 
 if (taglineElement) {
 
-    setInterval(() => {
+    function changeTagline() {
 
         taglineElement.style.opacity = 0;
 
         setTimeout(() => {
 
-            currentTagline++;
-
-            if (currentTagline >= taglines.length) {
-                currentTagline = 0;
-            }
+            currentTagline = (currentTagline + 1) % taglines.length;
 
             taglineElement.textContent = taglines[currentTagline];
 
             taglineElement.style.opacity = 1;
 
+            setTimeout(changeTagline, 2700);
+
         }, 300);
+    }
 
-    }, 3000);
-
+    setTimeout(changeTagline, 3000);
 }
