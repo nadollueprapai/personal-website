@@ -26,5 +26,7 @@ export const projectsData = [
         title: "Placeholder game name",
         description: "An upcoming game.",
         date: "To Be Confirmed",
-    }
+        resource: "",
+        linkText: "Coming Soon",
+    },
 ];
