@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Gallery | Nadol Lueprapai</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 
     <link rel="stylesheet" href="css/globals.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -51,13 +52,13 @@
 
     <main>
 
-        <section class="gallery-header">
+        <section id="gallery-header">
             <h1>Gallery</h1>
-            <p>A collection of things I have learned and/or completed.</p>
+            <p>A display of things I have learned and completed.</p>
         </section>
 
-        <section id="gallery-list" class="gallery-list">
-
+        <section id="gallery-list">
+            <!-- Gallery items will be dynamically inserted here -->
         </section>
 
     </main>
@@ -67,8 +68,8 @@
         <p>&copy; 2026 Nadol Lueprapai. All rights reserved.</p>
     </footer>
 
-
-    <script src="js/gallery.js"></script>
+    <script src="js/main.js" defer></script>
+    <script type="module" src="js/gallery.js" defer></script>
 
 </body>
 

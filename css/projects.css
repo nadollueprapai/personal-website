@@ -1,0 +1,75 @@
+/* =========================
+   Header
+========================= */
+
+#projects-header {
+    margin-bottom: 3rem;
+
+    text-align: center;
+}
+
+#projects-header h1 {
+    font-size: 3rem;
+}
+
+#projects-header p {
+    color: var(--text-muted);
+}
+
+
+/* =========================
+   Projects
+========================= */
+
+#projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-item {
+    padding: 2rem;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.project-item h2 {
+    font-size: 1.5rem;
+}
+
+.project-description {
+    color: var(--text-muted);
+}
+
+.project-date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.project-resource {
+    width: fit-content;
+
+    margin-top: 0.5rem;
+
+    font-weight: 600;
+}

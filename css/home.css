@@ -29,6 +29,7 @@
 
 .hero-content {
     position: relative;
+    width: 40%;
 }
 
 .hero h1 {
@@ -115,6 +116,21 @@
         transform 0.2s ease,
         box-shadow 0.2s ease,
         border-color 0.2s ease;
+}
+
+.home-links a div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.home-links strong {
+    font-size: 1.05rem;
+}
+
+.home-links a div span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
 .home-links a:hover {

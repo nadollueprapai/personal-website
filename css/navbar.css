@@ -43,6 +43,11 @@
     width: auto;
 }
 
+.logo a:hover {
+    opacity: 0.8;
+    border-color: transparent;
+}
+
 
 /* =========================
    Navigation Links
