@@ -2,6 +2,7 @@ export const projectsData = [
     {
         title: "Portfolio Website",
         description: "My personal portfolio built with HTML, CSS and JavaScript. You are looking at it right now!",
+        image: "assets/projects/portfolio-website.png",
         date: "July 2026",
         resource: "https://github.com/nadollueprapai/personal-website",
         linkText: "GitHub",
@@ -16,8 +17,9 @@ export const projectsData = [
     {
         title: "Mutants",
         description: "A story game created for the Roblox platform. Heavily inspired by the game 'Break In [STORY]'.",
+        image: "assets/projects/mutants.png",
         date: "July 2024",
         resource: "https://www.roblox.com/games/18685888512/Mutants",
-        linkText: "Play the game here",
+        linkText: "Play on Roblox",
     },
 ];

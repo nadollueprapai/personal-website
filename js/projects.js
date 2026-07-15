@@ -9,6 +9,10 @@ projectsData.forEach(project => {
     card.className = "project-item";
 
     card.innerHTML = `
+        ${project.image
+        ? `<img class="project-image" src="${project.image}" alt="${project.title}">`
+        : ""}
+
         <div class="project-content">
             <h2>${project.title}</h2>
 
@@ -28,13 +32,13 @@ projectsData.forEach(project => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    ${project.linkText ?? "View Project"} →
+                    ${project.resourceText ?? "View Project"} →
                 </a>
                 `
                 : ""}
         </div>
     `;
-    
+
     // Append the card to the container.
     container.appendChild(card);
 });
