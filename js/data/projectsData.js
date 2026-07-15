@@ -22,4 +22,9 @@ export const projectsData = [
         resource: "https://www.roblox.com/games/18685888512/Mutants",
         linkText: "Play on Roblox",
     },
+    {
+        title: "Placeholder game name",
+        description: "An upcoming game.",
+        date: "To Be Confirmed",
+    }
 ];

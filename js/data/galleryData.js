@@ -29,4 +29,9 @@ export const galleryData = [
         date: "May 1 2026",
         image: "assets/certificates/freecodecamp-python.png",
     },
+    {
+        title: "World Scholars Cup 2025 - Tournament Of Champions",
+        issuer: "World Scholars Cup",
+        date: "April 2025",
+    },
 ];

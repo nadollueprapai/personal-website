@@ -11,7 +11,7 @@ projectsData.forEach(project => {
     card.innerHTML = `
         ${project.image
         ? `<img class="project-image" src="${project.image}" alt="${project.title}">`
-        : ""}
+        : `<h4> Image To Be Added </h4>`}
 
         <div class="project-content">
             <h2>${project.title}</h2>
