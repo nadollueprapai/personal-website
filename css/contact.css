@@ -1,0 +1,69 @@
+/* Header */
+
+.contact-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.contact-header h1 {
+    font-size: 3rem;
+}
+
+.contact-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Contact List */
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Contact Item (Each method of contact) */
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.5rem 2rem;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.contact-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.contact-item strong {
+    font-size: 1.05rem;
+}
+
+.contact-item div span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.contact-item > span:last-child {
+    font-size: 1.3rem;
+    font-weight: 600;
+}

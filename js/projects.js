@@ -32,7 +32,7 @@ projectsData.forEach(project => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    ${project.resourceText ?? "View Project"} →
+                    ${project.linkText ?? "View Project"} →
                 </a>
                 `
                 : ""}
