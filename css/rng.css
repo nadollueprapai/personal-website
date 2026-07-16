@@ -1,0 +1,170 @@
+/* Game Card */
+
+.game {
+    padding: 2rem;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+
+    user-select: none;
+}
+
+
+/* Game Header */
+
+.game-header {
+    margin-bottom: 2rem;
+}
+
+.game-header h2 {
+    margin-bottom: 0.5rem;
+}
+
+.game-header p {
+    color: var(--text-muted);
+}
+
+
+/* Buttons */
+
+#buttons-section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+
+    flex-wrap: wrap;
+}
+
+#roll-button,
+#reset-button {
+    padding: 0.75rem 1.5rem;
+
+    border-radius: var(--radius);
+
+    cursor: pointer;
+
+    font: inherit;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+#roll-button {
+    background: var(--accent);
+    color: white;
+
+    border: none;
+}
+
+#reset-button {
+    background: var(--background);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+}
+
+#roll-button:hover,
+#reset-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+#roll-button:active,
+#reset-button:active {
+    transform: scale(0.97);
+}
+
+#roll-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* Last Roll */
+
+#roll-result-section {
+    margin-bottom: 2rem;
+}
+
+#roll-result-section h3 {
+    margin-bottom: 0.5rem;
+}
+
+#roll-result {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    min-height: 2rem;
+}
+
+@keyframes roll-pop {
+
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+
+    60% {
+        transform: translateY(-2px) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.roll-animation {
+    animation: roll-pop 0.35s ease;
+}
+
+
+/* Inventory */
+
+.inventory {
+    text-align: left;
+}
+
+.inventory h3 {
+    margin-bottom: 1rem;
+}
+
+#inventory-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+}
+
+#inventory-list p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.75rem 1rem;
+
+    background: var(--background);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.item-name {
+    font-weight: 600;
+}
+
+.item-info {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}

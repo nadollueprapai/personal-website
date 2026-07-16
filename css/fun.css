@@ -1,0 +1,26 @@
+/* Header */
+
+.fun-header {
+    margin-bottom: 3rem;
+
+    text-align: center;
+}
+
+.fun-header h1 {
+    font-size: 3rem;
+}
+
+.fun-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+
+/* Layout */
+
+.fun-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+}
