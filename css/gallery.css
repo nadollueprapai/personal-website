@@ -109,14 +109,11 @@
 
     box-shadow: var(--shadow);
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+    transition: var(--transition-card);
 }
 
 .gallery-item:hover {
-    transform: translateY(-3px);
+    transform: var(--transition-hover);
 
     box-shadow: var(--shadow-hover);
 

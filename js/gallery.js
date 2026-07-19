@@ -46,6 +46,7 @@ galleryData.forEach(item => {
         </div>
     `;
 
+    // Add a click event.
     card.addEventListener("click", () => {
         openModal(item.image, item.title, item.issuer);
     });

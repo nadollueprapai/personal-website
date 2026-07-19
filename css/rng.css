@@ -53,9 +53,7 @@
 
     font: inherit;
 
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
+    transition: var(--transition-button);
 }
 
 #roll-button {
