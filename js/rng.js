@@ -1,13 +1,13 @@
 import { rngData } from "./data/rngData.js";
 
 // Key used to store the game in localStorage.
-const STORAGE_KEY = "rngGame";
+const storageKey = "rngGame";
 
 // Maximum number of rolls allowed.
-const MAX_ROLLS = 10;
+const maximumRolls = 10;
 
 // Load the saved game or create a new one if none exists.
-const game = JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? {
+const game = JSON.parse(localStorage.getItem(storageKey)) ?? {
     rolls: 0,
     inventory: {}
 };
@@ -22,7 +22,7 @@ const inventoryList = document.getElementById("inventory-list");
 // Save the current game state to localStorage.
 function saveGame() {
     localStorage.setItem(
-        STORAGE_KEY,
+        storageKey,
         JSON.stringify(game)
     );
 }
@@ -54,17 +54,12 @@ function rollItem() {
 
 // Update the roll button to reflect how many rolls remain.
 function updateRollButton() {
-
-    if (game.rolls >= MAX_ROLLS) {
-
+    if (game.rolls >= maximumRolls) {
         rollButton.disabled = true;
         rollButton.textContent = "Out of Rolls";
-
     } else {
-
         rollButton.disabled = onCooldown;
-        rollButton.textContent = `Roll (${MAX_ROLLS - game.rolls} left)`;
-
+        rollButton.textContent = `Roll (${maximumRolls - game.rolls} left)`;
     }
 
 }
@@ -140,7 +135,7 @@ function animateRollResult() {
 rollButton.addEventListener("click", () => {
 
     // Stop if the player has used all of their rolls.
-    if (game.rolls >= MAX_ROLLS) {
+    if (game.rolls >= maximumRolls) {
         return;
     }
 
@@ -148,6 +143,7 @@ rollButton.addEventListener("click", () => {
         return;
     }
 
+    // Activate a cooldown.
     onCooldown = true;
     updateRollButton();
 
