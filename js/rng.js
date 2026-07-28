@@ -150,33 +150,64 @@ rollButton.addEventListener("click", () => {
     // Roll a random item.
     const item = rollItem();
 
-    // Display the rolled item.
-    rollResult.textContent = item.name;
-    rollResult.style.color = toCssColor(item.name);
+    // Number of fake rolls shown before revealing the final result.
+    const animationLength = 12;
 
-    // Play the animation.
-    animateRollResult();
+    // Keep track of how many fake rolls have been displayed.
+    let currentRoll = 0;
 
-    // Add the item to the inventory.
-    addToInventory(item);
+    // Create an interval to rapidly display random colours.
+    const animation = setInterval(() => {
 
-    // Count the roll.
-    game.rolls++;
+        // Roll a random colour from rngData to be the fake roll result.
+        const fake = rollItem();
 
-    // Save the updated game.
-    saveGame();
+        // Display the fake colour.
+        rollResult.textContent = fake.name;
+        rollResult.style.color = toCssColor(fake.name);
 
-    // Refresh the button text.
-    updateRollButton();
+        // Play the roll animation.
+        animateRollResult();
 
-    // Re-enable the button after one second if rolls remain.
-    setTimeout(() => {
+        // Increment the number of displayed fake rolls.
+        currentRoll++;
 
-        onCooldown = false;
-        updateRollButton();
+        // Check if the animation has finished.
+        if (currentRoll >= animationLength) {
 
-    }, 1000);
+            // Stop the animation.
+            clearInterval(animation);
 
+            // Display the actual rolled item.
+            rollResult.textContent = item.name;
+            rollResult.style.color = toCssColor(item.name);
+
+            // Play the roll animation.
+            animateRollResult();
+
+            // Count the roll.
+            game.rolls++;
+
+            // Add the item to the inventory.
+            addToInventory(item);
+
+            // Save the updated game.
+            saveGame();
+
+            // Refresh the button text.
+            updateRollButton();
+
+            // Re-enable the button after one second if rolls remain.
+            setTimeout(() => {
+
+                onCooldown = false;
+                updateRollButton();
+
+            }, 1000);
+
+        }
+
+    }, 100);
 });
 
 // Handle resetting the game.
