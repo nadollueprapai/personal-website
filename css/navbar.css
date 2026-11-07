@@ -8,15 +8,8 @@
     border-bottom: 1px solid var(--border);
 }
 
-body > header {
-    position: static;
-    inset: auto;
-    z-index: auto;
-    transform: none;
-}
-
-
 .nav-container {
+    
     --logo-height: 48px;
 
     width: 100%;
